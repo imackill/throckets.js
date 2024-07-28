@@ -48,7 +48,7 @@ class ThrocketServer extends Server{
                     default:
                         break;
                 }
-                this.clients.forEach((ws) => {
+                this.clients.forEach((ws: any) => {
                     let temp_collection = new ThrocketCollection().copy(this.objects);
                     let data = {
                         meta: 'update_package',
