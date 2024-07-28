@@ -4,7 +4,6 @@ import { ThrocketCollection } from "./collection";
 import { IncomingMessage} from "http";
 
 
-
 interface ThrocketServer extends Server{
     id: string,
     port: number,
@@ -21,7 +20,7 @@ class ThrocketServer extends Server{
         this.init();
     }
     init(){
-        this.on("connection", (ws: WebSocket, request: IncomingMessage) => {
+        this.on("connection", (ws: any, request: IncomingMessage) => {
             console.log(`Connected to Socket`);
             ws.id = v4();
             
