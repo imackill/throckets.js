@@ -1,4 +1,3 @@
-import { WebSocket } from "ws"
 import { v4 } from "uuid";
 
 interface Player{
@@ -6,7 +5,7 @@ interface Player{
 }
 
 class Player{
-    constructor(ws: WebSocket){
+    constructor(ws: any){
         this.id = v4();
     }
 }

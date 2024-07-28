@@ -1,4 +1,3 @@
-import { WebSocket } from "ws";
 import { v4 } from "uuid";
 
 interface ThrocketCollection{
@@ -22,7 +21,7 @@ class ThrocketCollection{
         if(!Object.keys(this.dict).includes(id))return -1;
         return this.dict[id];
     }
-    addSocket(ws: WebSocket){
+    addSocket(ws: any){
         return this.dict[ws.id] = ws;
     }
     rmSocketByID(id: string){
