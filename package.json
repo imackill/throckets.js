@@ -7,5 +7,9 @@
     "@types/ws": "^8.5.10",
     "nodemon": "^3.1.4",
     "three": "^0.166.1"
+  },
+  "scripts": {
+    "build":"npm i && tsc -p ./tsconfig.json",
+    "start": "node server-out/app.js"
   }
 }
