@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "CommonJS",
+        "sourceMap": true,
+        "outDir": "server-out",
+    },
+    "files.exclude": {
+        "**/*.js": { "when": "$(basename).ts" },
+        "**/**.js": { "when": "$(basename).tsx" }
+    }
+}
