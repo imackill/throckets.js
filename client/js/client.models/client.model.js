@@ -38,6 +38,7 @@ class ClientModel{
         this.mesh.position.lerp(this.mesh.position.add(speed_vec), delta);
     }
     attach(target){//can be a group or a scene
+        this.parent = target;
         target.add(this.mesh);
     }
 }

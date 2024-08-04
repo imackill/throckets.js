@@ -28,6 +28,7 @@ class ClientSock{
     }
     init(obj){
         setInterval(() => {
+            if(this.sock.readyState == 0)return;
             let data = {
                 meta: 'update',
                 data: {
