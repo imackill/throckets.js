@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { PlayerModel } from './player.model.js';
+import { SockAssigner } from '../addons/scripts/sock_labels.js';
 
 class ThreeWorld{
     constructor(client, sock){
@@ -59,6 +60,7 @@ class ThreeWorld{
         this.client.attach(this.scene);
         this.client.mesh.add( this.camera );
         this.camera.position.set(0, 1, 3);
+        this.labels = new SockAssigner();
 
         //Animation Frame Loop
         this.renderer.setAnimationLoop(() => {
@@ -101,6 +103,7 @@ class ThreeWorld{
                 return player_obj.attach(this.scene);
             }
         });
+        this.labels.assign(this.scene);
     }
     updateMouse(e){
         this.mouse.x += e.movementX;
