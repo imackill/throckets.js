@@ -26,7 +26,7 @@ const server = createServer((req, res) => {
     }
 
     if(fs.statSync(filename).isDirectory()){
-        filename += `index.html`;
+        filename += `html/index.html`;
     }
 
     fs.readFile(filename, "binary", (err, file) => {

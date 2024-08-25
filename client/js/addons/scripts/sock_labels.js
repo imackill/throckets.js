@@ -11,13 +11,14 @@ class SockAssigner{
         label_targets = label_targets.filter(elem => !(elem.name.slice(0,2) == "C_"));
         label_targets.forEach(player => {
             if(!(this.hasLabel(player))){ //no label—create new
+                let display_name = player.nickname || player.name
                 let label_parts = {
                     geometry: null,
                     material: null,
                 }
                 const loader = new FontLoader();
                 loader.load('fonts/Minecraft.typeface.json', (font) => {
-                    label_parts.geometry = new TextGeometry(player.name, {
+                    label_parts.geometry = new TextGeometry(display_name, {
                         font: font,
                         size: 0.1,
                         depth: 0.01,
