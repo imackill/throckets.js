@@ -72,6 +72,7 @@ class ThreeWorld{
 
             this.receivePlayerData(sock.global_players);
             this.renderer.render(this.scene, this.camera);
+
         });
     }
     receivePlayerData(data){ //TODO: add other players in
@@ -83,6 +84,7 @@ class ThreeWorld{
             //remove disconnects
             objs_in_scene.forEach(elem => {
                 if((elem.slice(0,2) == 'C_') || (Object.keys(data.dict).includes(elem)))return;//client-side and existing players, don't want to remove
+                this.labels.removeLabel(this.scene.getObjectByName(elem));
                 this.scene.remove(this.scene.getObjectByName(elem));
             });
         }

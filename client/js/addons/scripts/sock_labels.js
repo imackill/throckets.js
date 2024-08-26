@@ -27,7 +27,9 @@ class SockAssigner{
                     });
                     label_parts.material = new THREE.MeshBasicMaterial({color: 0x000000});
                     let label_mesh = new THREE.Mesh(label_parts.geometry, label_parts.material);
+                    label_mesh.name = `L_${display_name}`;
                     label_mesh.position.set(-1.5,1,0);
+                    this.labels[label_mesh.name] = label_mesh;
                     player.add(label_mesh);
                 });
             }
@@ -35,6 +37,9 @@ class SockAssigner{
     }
     hasLabel(player){
         return (Object.keys(this.labels).includes(player.name));
+    }
+    removeLabel(player){
+        delete this.labels[`L_${player.name}`];
     }
 }
 
